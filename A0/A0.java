@@ -9,6 +9,14 @@ Karl von Weyhe
 
 public class A0{
 
+  String name;
+  double price;
+
+  public static double moneyFormat(double n) {
+    DecimalFormat moneyFormat = new DecimalFormat("$##0.00");
+    return moneyFormat.format(n);
+  }
+
   public static double circleArea(double radius) { // calcuate area using Math.PI
     double a = radius * radius;
     return Math.PI * a;
@@ -16,6 +24,23 @@ public class A0{
 
   public static double rectArea(double length, double width) { // calcuate area (why did i bother making this a method)
     return length * width;
+  }
+
+  public ShopItem(String inName, double inPrice) {
+    this.name = inName;
+    this.price = inPrice;
+  }
+
+  public String toString() {
+    String str = this.name + "\t\t" + this.price;
+    return str;
+  }
+
+  public static void questionSix() {
+    double tax = 0.13;
+    ShopItem shirt = new ShopItem("Shirt", 12.49);
+
+    System.out.println(ShopItem.toString());
   }
 
 public static void main(String[] args){
@@ -47,7 +72,6 @@ public static void main(String[] args){
 
   System.out.println("\n\n\n");
   //Q4
-  DecimalFormat moneyFormat = new DecimalFormat("$##0.00");
   DecimalFormat percentFormat = new DecimalFormat("00%");
   int hours = 40;
   double hourlyWage = 13.00;
@@ -56,12 +80,17 @@ public static void main(String[] args){
 
   double netPay = (hours * hourlyWage - deducted) - tax * (hours * hourlyWage - deducted);
 
-  System.out.println(moneyFormat.format(netPay) + " = (" + hours + " * " + moneyFormat.format(hourlyWage) + " - " + moneyFormat.format(deducted) + ") - " + percentFormat.format(tax) + " * (" + hours + " * " + moneyFormat.format(hourlyWage) + " - " + moneyFormat.format(deducted) + ")");
+  System.out.println(moneyFormat(netPay) + " = (" + hours + " * " + moneyFormat(hourlyWage) + " - " + moneyFormat(deducted) + ") - " + percentFormat.format(tax) + " * (" + hours + " * " + moneyFormat(hourlyWage) + " - " + moneyFormat(deducted) + ")");
 
 
   System.out.println("\n\n\n");
   //Q5
   //im figuring this out in the morning
+
+
+  System.out.println("\n\n\n");
+  //Q6
+  questionSix();
 
 
  }// close main
