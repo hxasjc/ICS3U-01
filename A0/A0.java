@@ -1,4 +1,5 @@
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 
 
 /*
@@ -12,9 +13,14 @@ public class A0{
   String name;
   double price;
 
-  public static double moneyFormat(double n) {
-    DecimalFormat moneyFormat = new DecimalFormat("$##0.00");
-    return moneyFormat.format(n);
+  public static String moneyFormat(double n) {
+    DecimalFormat nf = new DecimalFormat("$##0.00");
+    return nf.format(n);
+  }
+
+  public static String percentFormat(double n) {
+    DecimalFormat nf = new DecimalFormat("00.##%");
+    return nf.format(n);
   }
 
   public static double circleArea(double radius) { // calcuate area using Math.PI
@@ -22,14 +28,10 @@ public class A0{
     return Math.PI * a;
   }
 
-  public static double rectArea(double length, double width) { // calcuate area (why did i bother making this a method)
-    return length * width;
-  }
-
-  public ShopItem(String inName, double inPrice) {
+  /* public ShopItem(String inName, double inPrice) {
     this.name = inName;
     this.price = inPrice;
-  }
+  } */
 
   public String toString() {
     String str = this.name + "\t\t" + this.price;
@@ -38,9 +40,20 @@ public class A0{
 
   public static void questionSix() {
     double tax = 0.13;
-    ShopItem shirt = new ShopItem("Shirt", 12.49);
+    double cash = 20.0;
+    double subtotal = 0;
+    //ArrayList<ShopItem> products = new ArrayList<String>();
 
-    System.out.println(ShopItem.toString());
+    // use products.add() to add all products to arraylist
+    // cycle through products and add to subtotal
+    // calcuate tax
+    // calcuate total
+    // calcuate change
+    // print stuff and make it pretty
+    System.out.println("Tax (" + percentFormat(tax) + ")");
+
+    /* ShopItem shirt = new ShopItem("Shirt", 12.49);
+    System.out.println(ShopItem.toString()); */
   }
 
 public static void main(String[] args){
@@ -63,7 +76,7 @@ public static void main(String[] args){
   //Q3
   double length = 5.7;
   double width = 4.8;
-  double area = rectArea(length, width);
+  double area = length * width;
   
   System.out.println("The length of the rectangle is " + length + "cm.");
   System.out.println("The width of the rectangle is " + width + "cm.");
@@ -72,7 +85,6 @@ public static void main(String[] args){
 
   System.out.println("\n\n\n");
   //Q4
-  DecimalFormat percentFormat = new DecimalFormat("00%");
   int hours = 40;
   double hourlyWage = 13.00;
   double deducted = 4.00;
@@ -80,7 +92,7 @@ public static void main(String[] args){
 
   double netPay = (hours * hourlyWage - deducted) - tax * (hours * hourlyWage - deducted);
 
-  System.out.println(moneyFormat(netPay) + " = (" + hours + " * " + moneyFormat(hourlyWage) + " - " + moneyFormat(deducted) + ") - " + percentFormat.format(tax) + " * (" + hours + " * " + moneyFormat(hourlyWage) + " - " + moneyFormat(deducted) + ")");
+  System.out.println(moneyFormat(netPay) + " = (" + hours + " * " + moneyFormat(hourlyWage) + " - " + moneyFormat(deducted) + ") - " + percentFormat(tax) + " * (" + hours + " * " + moneyFormat(hourlyWage) + " - " + moneyFormat(deducted) + ")");
 
 
   System.out.println("\n\n\n");
