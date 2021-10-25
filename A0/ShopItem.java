@@ -42,7 +42,6 @@ public class ShopItem {
 
     String str = sb.toString();
 
-    //String str = this.name + "\t\t" + this.price;
     return str;
   }
 }

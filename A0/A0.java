@@ -24,8 +24,8 @@ public class A0{
   }
 
   public static double circleArea(double radius) { // calcuate area using Math.PI
-    double a = radius * radius;
-    return Math.PI * a;
+    //double a = radius * radius;
+    return Math.PI * (radius * radius);
   }
 
 
@@ -84,11 +84,11 @@ public class A0{
       System.out.println(item.toString());
     }
 
-    System.out.println("0\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t11\t12\t13\t14\t15"); // special line for me to count tabs
+    //System.out.println("0\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\t11\t12\t13\t14\t15"); // special line for me to count tabs
     System.out.println(lineBreak);
 
     System.out.println("Subtotal: \t\t\t\t\t\t\t\t\t" + moneyFormat(subtotal)); // print other fields
-    System.out.println("Tax: (" + percentFormat(taxPercent) + ")\t\t\t\t\t\t\t\t\t" + moneyFormat(tax));
+    System.out.println("Tax:\t\t\t(" + percentFormat(taxPercent) + ")\t\t\t\t\t\t" + moneyFormat(tax));
     System.out.println("Total: \t\t\t\t\t\t\t\t\t\t" + moneyFormat(total));
     System.out.println("\nCash: \t\t\t\t\t\t\t\t\t\t" + moneyFormat(cash));
     System.out.println("Change: \t\t\t\t\t\t\t\t\t" + moneyFormat(change));
@@ -103,9 +103,8 @@ public static void main(String[] args){
   double radius = 15.0;
   DecimalFormat twoDecimalFormat = new DecimalFormat("0.00");
   double areaCircle = circleArea(radius);
-  System.out.println("Full result: " + areaCircle + "\nResult with 2 decimals: " + twoDecimalFormat.format(areaCircle));
-  //System.out.println(twoDecimalFormat.format(areaCircle));
-
+  System.out.println("The area of the circle is " + twoDecimalFormat.format(areaCircle) + "cm².");
+  System.out.println("Full answer: " + areaCircle);
 
   System.out.println("\n\n\n");
   //Q2
@@ -142,7 +141,10 @@ public static void main(String[] args){
   System.out.println("\n\n\n");
   //Q5
   System.out.println("**Question 5**");
-  //im figuring this out in the morning
+  int num1 = 53;
+  int num2 = 3;
+  int num3 = 53 / 3; // 17
+  System.out.println(num1 + "/" + num2 + " = " + num3);
 
 
   System.out.println("\n\n\n");
